@@ -32,11 +32,29 @@
 
 import 'package:flutter/material.dart';
 import 'core/app_theme.dart';
+import 'features/quiz/test_data_screen.dart'; // 👈 import this
 
 void main() {
   runApp(const CertPrepProApp());
 }
 
+class CertPrepProApp extends StatelessWidget {
+  const CertPrepProApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'CertPrep Pro',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: const TestDataScreen(), // 👈 just for dev/testing
+    );
+  }
+}
+
+/*
+/// CertPrep Pro Application
+/// This is the main entry point of the CertPrep Pro application.
 class CertPrepProApp extends StatelessWidget {
   const CertPrepProApp({super.key});
 
@@ -52,4 +70,5 @@ class CertPrepProApp extends StatelessWidget {
       ),
     );
   }
-}
+} */
+/// CertPrep Pro Application

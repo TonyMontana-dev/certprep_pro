@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
+import '../sample_data/isc2_sample.dart';
 
 
 class DatabaseHelper {
@@ -80,5 +81,8 @@ class DatabaseHelper {
       total_time_seconds INTEGER DEFAULT 0,
       FOREIGN KEY (exam_id) REFERENCES exams(id),
       FOREIGN KEY (domain_id) REFERENCES domains(id))''');
+
+    // Insert sample questions after DB is ready
+    await insertSampleISC2CCData(db);
   }
 }
