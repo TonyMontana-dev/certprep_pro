@@ -5,11 +5,20 @@
 *.swp
 .DS_Store
 .atom/
+.build/
 .buildlog/
 .history
 .svn/
+.swiftpm/
 migrate_working_dir/
 *.db
+
+# CocoaPods
+ios/Pods/
+ios/Podfile.lock
+macos/Pods/
+macos/Podfile.lock
+
 
 
 # IntelliJ related
