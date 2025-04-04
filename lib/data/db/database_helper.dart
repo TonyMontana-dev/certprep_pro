@@ -2,8 +2,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import '../sample_data/isc2_sample.dart';
-
+import '../sample_data/insert_questions_from_json.dart'; // JSON-based data insertion
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
@@ -30,59 +29,81 @@ class DatabaseHelper {
     );
   }
 
-  Future _onCreate(Database db, int version) async {
-    await db.execute('''CREATE TABLE exams (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      title TEXT NOT NULL)''');
+  Future<void> _onCreate(Database db, int version) async {
+    // 🧱 Create all tables
+    await db.execute('''
+      CREATE TABLE exams (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL
+      )
+    ''');
 
-    await db.execute('''CREATE TABLE domains (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      exam_id INTEGER,
-      name TEXT NOT NULL,
-      FOREIGN KEY (exam_id) REFERENCES exams(id))''');
+    await db.execute('''
+      CREATE TABLE domains (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        exam_id INTEGER,
+        name TEXT NOT NULL,
+        FOREIGN KEY (exam_id) REFERENCES exams(id)
+      )
+    ''');
 
-    await db.execute('''CREATE TABLE questions (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      domain_id INTEGER,
-      exam_id INTEGER,
-      question TEXT NOT NULL,
-      explanation TEXT,
-      FOREIGN KEY (domain_id) REFERENCES domains(id),
-      FOREIGN KEY (exam_id) REFERENCES exams(id))''');
+    await db.execute('''
+      CREATE TABLE questions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        domain_id INTEGER,
+        exam_id INTEGER,
+        question TEXT NOT NULL,
+        explanation TEXT,
+        FOREIGN KEY (domain_id) REFERENCES domains(id),
+        FOREIGN KEY (exam_id) REFERENCES exams(id)
+      )
+    ''');
 
-    await db.execute('''CREATE TABLE answers (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      question_id INTEGER,
-      answer TEXT NOT NULL,
-      is_correct INTEGER NOT NULL,
-      FOREIGN KEY (question_id) REFERENCES questions(id))''');
+    await db.execute('''
+      CREATE TABLE answers (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        question_id INTEGER,
+        answer TEXT NOT NULL,
+        is_correct INTEGER NOT NULL,
+        FOREIGN KEY (question_id) REFERENCES questions(id)
+      )
+    ''');
 
-    await db.execute('''CREATE TABLE bookmarks (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      question_id INTEGER,
-      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY (question_id) REFERENCES questions(id))''');
+    await db.execute('''
+      CREATE TABLE bookmarks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        question_id INTEGER,
+        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (question_id) REFERENCES questions(id)
+      )
+    ''');
 
-    await db.execute('''CREATE TABLE attempts (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      exam_id INTEGER,
-      score INTEGER,
-      total_questions INTEGER,
-      duration_seconds INTEGER,
-      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY (exam_id) REFERENCES exams(id))''');
+    await db.execute('''
+      CREATE TABLE attempts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        exam_id INTEGER,
+        score INTEGER,
+        total_questions INTEGER,
+        duration_seconds INTEGER,
+        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (exam_id) REFERENCES exams(id)
+      )
+    ''');
 
-    await db.execute('''CREATE TABLE user_stats (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      exam_id INTEGER,
-      domain_id INTEGER,
-      total_answered INTEGER DEFAULT 0,
-      correct_answered INTEGER DEFAULT 0,
-      total_time_seconds INTEGER DEFAULT 0,
-      FOREIGN KEY (exam_id) REFERENCES exams(id),
-      FOREIGN KEY (domain_id) REFERENCES domains(id))''');
+    await db.execute('''
+      CREATE TABLE user_stats (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        exam_id INTEGER,
+        domain_id INTEGER,
+        total_answered INTEGER DEFAULT 0,
+        correct_answered INTEGER DEFAULT 0,
+        total_time_seconds INTEGER DEFAULT 0,
+        FOREIGN KEY (exam_id) REFERENCES exams(id),
+        FOREIGN KEY (domain_id) REFERENCES domains(id)
+      )
+    ''');
 
-    // Insert sample questions after DB is ready
-    await insertSampleISC2CCData(db);
+    // ✅ Insert sample data from JSON if database is empty
+    await insertQuestionsFromJson(db);
   }
 }

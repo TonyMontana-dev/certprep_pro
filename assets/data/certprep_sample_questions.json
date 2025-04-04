@@ -1,0 +1,139 @@
+{
+    "exams": [
+      {
+        "title": "ISC2 Certified in Cybersecurity (CC)",
+        "domains": [
+          {
+            "name": "Security Principles",
+            "questions": [
+              {
+                "question": "What is the primary goal of information security?",
+                "explanation": "The primary goal is to ensure the confidentiality, integrity, and availability of information.",
+                "answers": [
+                  {
+                    "answer": "Maximize system performance",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Ensure the CIA triad",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "Prevent physical access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Minimize cost of security",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "What does the principle of least privilege ensure?",
+                "explanation": "It ensures users only have the minimum access required for their role.",
+                "answers": [
+                  {
+                    "answer": "All users get admin access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Access is granted based on job requirements",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "Users can request more privileges anytime",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Access is shared among teams",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Access Control Concepts",
+            "questions": [
+              {
+                "question": "Which model uses roles to determine access permissions?",
+                "explanation": "Role-Based Access Control (RBAC) uses roles to manage access.",
+                "answers": [
+                  {
+                    "answer": "Discretionary Access Control",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Mandatory Access Control",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Role-Based Access Control",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "Rule-Based Access Control",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "CompTIA Security+",
+        "domains": [
+          {
+            "name": "Threats, Attacks and Vulnerabilities",
+            "questions": [
+              {
+                "question": "Which of the following is a type of social engineering attack?",
+                "explanation": "Phishing is a common social engineering method where attackers trick users into revealing sensitive information.",
+                "answers": [
+                  {
+                    "answer": "Phishing",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "SQL Injection",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "DDoS",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Man-in-the-middle",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "Which malware type demands payment to restore access?",
+                "explanation": "Ransomware encrypts files and demands payment to restore access.",
+                "answers": [
+                  {
+                    "answer": "Trojan",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Rootkit",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Ransomware",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "Spyware",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
