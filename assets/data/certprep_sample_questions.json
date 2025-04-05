@@ -290,11 +290,181 @@
                   {"answer": "To eliminate the need for passwords", "is_correct": false},
                   {"answer": "To simplify user access", "is_correct": false}
                 ]
+              },
+              {
+                "question": "An unauthorized visitor slips in behind an employee through a secure door without using a badge. What is this security breach called?",
+                "explanation": "This is known as tailgating — when an unauthorized person follows someone through a secure entry without presenting credentials.",
+                "answers": [
+                  { "answer": "Tailgating", "is_correct": true },
+                  { "answer": "Phishing", "is_correct": false },
+                  { "answer": "Shoulder surfing", "is_correct": false },
+                  { "answer": "Brute forcing", "is_correct": false }
+                ]
+              },
+              {
+                "question": "Which of the following is an example of a physical access control designed to prevent tailgating?",
+                "explanation": "A mantrap is a small enclosure with two interlocking doors designed to prevent tailgating by isolating individuals.",
+                "answers": [
+                  { "answer": "A mantrap (two-door entry system)", "is_correct": true },
+                  { "answer": "A VPN tunnel", "is_correct": false },
+                  { "answer": "A biometric login prompt on a computer", "is_correct": false },
+                  { "answer": "An intrusion detection system", "is_correct": false }
+                ]
+              },
+              {
+                "question": "In access control terms, which of the following entities is a subject rather than an object?",
+                "explanation": "A subject is an active entity (e.g., a user or process) that requests access to a resource.",
+                "answers": [
+                  { "answer": "A user process requesting access to a file", "is_correct": true },
+                  { "answer": "A database table containing customer records", "is_correct": false },
+                  { "answer": "A secure file server storing archives", "is_correct": false },
+                  { "answer": "A confidential document on a shared drive", "is_correct": false }
+                ]
+              },
+              {
+                "question": "The security principle of least privilege dictates that:",
+                "explanation": "Users should be granted only the minimum access necessary to perform their job duties.",
+                "answers": [
+                  { "answer": "Users are granted only the minimum access rights required to perform their duties", "is_correct": true },
+                  { "answer": "Every user should have administrative privileges in case they need to do elevated tasks", "is_correct": false },
+                  { "answer": "Access should be granted based on seniority", "is_correct": false },
+                  { "answer": "All access decisions are made by a central authority without user input", "is_correct": false }
+                ]
+              },
+              {
+                "question": "Which scenario is a clear violation of the least privilege principle?",
+                "explanation": "Giving every employee full administrative rights provides more access than necessary and violates the least privilege principle.",
+                "answers": [
+                  { "answer": "Every employee in a company is given full administrator rights on all systems", "is_correct": true },
+                  { "answer": "A helpdesk technician has access only to user account management tools", "is_correct": false },
+                  { "answer": "A marketing staff member can edit the website but cannot access server configuration files", "is_correct": false },
+                  { "answer": "Database administrators have read/write access to databases but no access to HR payroll files", "is_correct": false }
+                ]
+              },
+              {
+                "question": "Separation of duties is primarily implemented to prevent:",
+                "explanation": "Separation of duties is designed to prevent fraud or errors by ensuring no single person has control over an entire process.",
+                "answers": [
+                  { "answer": "Fraud or errors by ensuring no single individual has total control over a critical process", "is_correct": true },
+                  { "answer": "Collisions on a network", "is_correct": false },
+                  { "answer": "Data from being accessible due to multiple encryption layers", "is_correct": false },
+                  { "answer": "A user from having to remember multiple passwords", "is_correct": false }
+                ]
+              },
+              {
+                "question": "An access control model in which the owner of a file can determine who else is allowed to read or modify that file is known as:",
+                "explanation": "In Discretionary Access Control (DAC), the owner of the resource determines who can access it.",
+                "answers": [
+                  { "answer": "Discretionary Access Control (DAC)", "is_correct": true },
+                  { "answer": "Mandatory Access Control (MAC)", "is_correct": false },
+                  { "answer": "Rule-Based Access Control", "is_correct": false },
+                  { "answer": "Attribute-Based Access Control (ABAC)", "is_correct": false }
+                ]
+              },
+              {
+                "question": "A government agency uses classification labels and user clearances to determine access. What access control model is this?",
+                "explanation": "Mandatory Access Control (MAC) uses labels and clearances to restrict access based on system-enforced rules.",
+                "answers": [
+                  { "answer": "Mandatory Access Control (MAC)", "is_correct": true },
+                  { "answer": "Discretionary Access Control (DAC)", "is_correct": false },
+                  { "answer": "Role-Based Access Control (RBAC)", "is_correct": false },
+                  { "answer": "Hybrid Access Control", "is_correct": false }
+                ]
+              },
+              {
+                "question": "A company assigns permissions based on users' departments and job functions. This is an example of:",
+                "explanation": "This is Role-Based Access Control (RBAC), where permissions are assigned according to user roles.",
+                "answers": [
+                  { "answer": "Role-Based Access Control (RBAC)", "is_correct": true },
+                  { "answer": "Discretionary Access Control (DAC)", "is_correct": false },
+                  { "answer": "Mandatory Access Control (MAC)", "is_correct": false },
+                  { "answer": "Multi-factor Access Control", "is_correct": false }
+                ]
+              },
+              {
+                "question": "The correct order of steps for granting access to a secured resource is:",
+                "explanation": "The sequence is: Identification → Authentication → Authorization.",
+                "answers": [
+                  { "answer": "Identification, then Authentication, then Authorization", "is_correct": true },
+                  { "answer": "Authorization, then Authentication, then Identification", "is_correct": false },
+                  { "answer": "Authentication, then Authorization, then Identification", "is_correct": false },
+                  { "answer": "Authentication, then Accounting, then Authorization", "is_correct": false }
+                ]
+              },
+              {
+                "question": "In access control, what are the subject and object in a file access request?",
+                "explanation": "The subject is the user or process requesting access; the object is the file or resource.",
+                "answers": [
+                  { "answer": "The subject is the user (or process), and the object is the file", "is_correct": true },
+                  { "answer": "The subject is the file, and the object is the user requesting access", "is_correct": false },
+                  { "answer": "The subject is the operating system, and the object is the server", "is_correct": false },
+                  { "answer": "Subject and object are interchangeable in this context", "is_correct": false }
+                ]
+              },
+              {
+                "question": "A fingerprint scan is an example of which authentication factor?",
+                "explanation": "Fingerprints fall under 'something you are', which is a biometric factor.",
+                "answers": [
+                  { "answer": "Something you are", "is_correct": true },
+                  { "answer": "Something you have", "is_correct": false },
+                  { "answer": "Something you know", "is_correct": false },
+                  { "answer": "Something you do", "is_correct": false }
+                ]
+              },
+              {
+                "question": "A smart card that generates a one-time code is an example of:",
+                "explanation": "This is 'something you have' — a physical item used for authentication.",
+                "answers": [
+                  { "answer": "Something you have", "is_correct": true },
+                  { "answer": "Something you know", "is_correct": false },
+                  { "answer": "Something you are", "is_correct": false },
+                  { "answer": "Something you type", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What should a strong password policy include?",
+                "explanation": "Strong policies enforce minimum length, complexity, and periodic password changes.",
+                "answers": [
+                  { "answer": "Requirements for minimum length, complexity (mix of character types), and regular password changes", "is_correct": true },
+                  { "answer": "Allowing users to reuse the same password indefinitely", "is_correct": false },
+                  { "answer": "Sharing of passwords among team members", "is_correct": false },
+                  { "answer": "Writing down passwords on sticky notes as a backup", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What is the purpose of an Acceptable Use Policy (AUP)?",
+                "explanation": "An AUP defines what employees are allowed and not allowed to do with organizational IT resources.",
+                "answers": [
+                  { "answer": "To outline the rules and expectations for how employees may use the organization’s IT assets and network", "is_correct": true },
+                  { "answer": "To specify how long data must be retained and when it should be deleted", "is_correct": false },
+                  { "answer": "To grant every user full administrative privileges", "is_correct": false },
+                  { "answer": "To define password complexity requirements", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What is a BYOD policy designed to do?",
+                "explanation": "A BYOD policy governs how personal devices may be used for work and what security controls must be enforced.",
+                "answers": [
+                  { "answer": "Set security requirements and guidelines for employees using personal devices (like smartphones, laptops) for work purposes", "is_correct": true },
+                  { "answer": "Prohibit employees from using personal phones for work", "is_correct": false },
+                  { "answer": "Force the company to purchase a device for every personal activity", "is_correct": false },
+                  { "answer": "Allow unrestricted access to the network for any device an employee brings in", "is_correct": false }
+                ]
+              },
+              {
+                "question": "Why is security awareness training important for access control and overall security?",
+                "explanation": "It teaches users to recognize threats like phishing and to follow safe practices, reducing the risk of human error.",
+                "answers": [
+                  { "answer": "It educates users on safe practices (like handling phishing attempts, using strong passwords)", "is_correct": true },
+                  { "answer": "It replaces the need for technical controls", "is_correct": false },
+                  { "answer": "It allows employees to bypass policies", "is_correct": false },
+                  { "answer": "It only serves a compliance checkbox", "is_correct": false }
+                ]
               }
             ]
           },
           {
-            "name": "Security Architecture",
+            "name": "Network Security",
             "questions": [
               {
                 "question": "What is the purpose of a firewall?",
@@ -305,11 +475,131 @@
                   {"answer": "To store sensitive information", "is_correct": false},
                   {"answer": "To manage user authentication", "is_correct": false}
                 ]
+              },
+              {
+                "question": "Which networking device operates primarily at the Network Layer (Layer 3) of the OSI model and is used to forward packets between different networks?",
+                "explanation": "A router works at OSI Layer 3 (Network Layer) and forwards packets based on IP addresses. It connects different networks using routing tables.",
+                "answers": [
+                  { "answer": "Router", "is_correct": true },
+                  { "answer": "Switch", "is_correct": false },
+                  { "answer": "Hub", "is_correct": false },
+                  { "answer": "Network Interface Card (NIC)", "is_correct": false }
+                ]
+              },
+              {
+                "question": "By default, HTTPS (secure web traffic) uses which TCP port number?",
+                "explanation": "HTTPS uses TCP port 443. HTTP uses port 80, FTP uses 21, and SMTP uses 25.",
+                "answers": [
+                  { "answer": "443", "is_correct": true },
+                  { "answer": "80", "is_correct": false },
+                  { "answer": "21", "is_correct": false },
+                  { "answer": "25", "is_correct": false }
+                ]
+              },
+              {
+                "question": "How many bits are in an IPv6 address, and how does that compare to IPv4?",
+                "explanation": "IPv6 uses 128-bit addresses, compared to 32-bit IPv4 addresses. This allows for vastly more possible addresses.",
+                "answers": [
+                  { "answer": "IPv6 addresses are 128 bits, whereas IPv4 addresses are 32 bits", "is_correct": true },
+                  { "answer": "IPv6 addresses are 64 bits, IPv4 are 32 bits", "is_correct": false },
+                  { "answer": "IPv6 and IPv4 both use 32-bit addresses", "is_correct": false },
+                  { "answer": "IPv6 uses 256-bit addresses, vs 32-bit for IPv4", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What is a major security risk associated with unsecured Wi-Fi networks?",
+                "explanation": "Attackers can eavesdrop on wireless traffic and capture sensitive data if Wi-Fi is not encrypted.",
+                "answers": [
+                  { "answer": "Attackers can eavesdrop on wireless traffic and capture sensitive data if the Wi-Fi is not encrypted", "is_correct": true },
+                  { "answer": "Wi-Fi signals cannot be intercepted at all, so there is no risk", "is_correct": false },
+                  { "answer": "Unsecured Wi-Fi automatically infects connected devices with malware", "is_correct": false },
+                  { "answer": "Using unsecured Wi-Fi will physically damage a device's hardware", "is_correct": false }
+                ]
+              },
+              {
+                "question": "A Distributed Denial of Service (DDoS) attack is characterized by:",
+                "explanation": "A DDoS attack involves many compromised systems flooding a target with traffic, overwhelming its resources.",
+                "answers": [
+                  { "answer": "Many compromised systems flooding a target with traffic, overwhelming its capacity", "is_correct": true },
+                  { "answer": "An attacker stealing passwords via phishing emails", "is_correct": false },
+                  { "answer": "Exploiting a software vulnerability to gain unauthorized access", "is_correct": false },
+                  { "answer": "Intercepting communication between two parties without their knowledge", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What is the key difference between a virus and a worm?",
+                "explanation": "A worm can spread on its own without user action, while a virus needs a host file and typically user interaction.",
+                "answers": [
+                  { "answer": "A worm can spread by itself across networks without human action, whereas a virus requires a host file and user action to spread", "is_correct": true },
+                  { "answer": "There is no difference - 'virus' and 'worm' are synonymous", "is_correct": false },
+                  { "answer": "A virus is always non-malicious, while a worm is always malicious", "is_correct": false },
+                  { "answer": "Viruses only target mobile phones, and worms only target servers", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What type of device monitors network traffic for suspicious activity and generates alerts, but does not take direct action to stop threats?",
+                "explanation": "An Intrusion Detection System (IDS) observes and reports activity, whereas an IPS can actively block it.",
+                "answers": [
+                  { "answer": "Intrusion Detection System (IDS)", "is_correct": true },
+                  { "answer": "Firewall", "is_correct": false },
+                  { "answer": "Intrusion Prevention System (IPS)", "is_correct": false },
+                  { "answer": "Load balancer", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What is the fundamental difference between an IDS and an IPS?",
+                "explanation": "An IDS monitors and alerts; an IPS can automatically block or mitigate detected threats.",
+                "answers": [
+                  { "answer": "An IDS monitors and alerts on suspicious activity but generally does not block it, whereas an IPS can automatically block or reject malicious traffic", "is_correct": true },
+                  { "answer": "IDS runs on network hardware, IPS runs on servers only", "is_correct": false },
+                  { "answer": "IDS is used only for physical security, IPS is for cyber security", "is_correct": false },
+                  { "answer": "There is no difference - the terms are interchangeable", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What is the primary function of a network firewall?",
+                "explanation": "A firewall filters and controls network traffic based on security rules to protect internal networks from threats.",
+                "answers": [
+                  { "answer": "To filter and control incoming and outgoing network traffic based on predetermined security rules", "is_correct": true },
+                  { "answer": "To encrypt all network traffic end-to-end", "is_correct": false },
+                  { "answer": "To capture and store all network packets for forensic analysis only", "is_correct": false },
+                  { "answer": "To physically stop people from accessing the server room", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What is the purpose of network segmentation?",
+                "explanation": "Network segmentation divides a network into zones to contain threats and improve performance and security.",
+                "answers": [
+                  { "answer": "To isolate network segments to limit lateral movement and improve performance", "is_correct": true },
+                  { "answer": "To allow unrestricted access to all systems", "is_correct": false },
+                  { "answer": "To reduce the number of devices on the network", "is_correct": false },
+                  { "answer": "To improve Wi-Fi signal strength", "is_correct": false }
+                ]
+              },
+              {
+                "question": "Why is patch management important for network security?",
+                "explanation": "Applying security patches closes known vulnerabilities before attackers can exploit them.",
+                "answers": [
+                  { "answer": "It addresses known vulnerabilities and helps prevent exploits", "is_correct": true },
+                  { "answer": "It makes systems run faster", "is_correct": false },
+                  { "answer": "It updates graphics drivers", "is_correct": false },
+                  { "answer": "It improves internet download speeds", "is_correct": false }
+                ]
+              },
+              {
+                "question": "What does a SIEM system do in a network environment?",
+                "explanation": "SIEM (Security Information and Event Management) aggregates and correlates logs from various sources to detect suspicious patterns.",
+                "answers": [
+                  { "answer": "Aggregates and correlates logs from multiple sources to identify security incidents", "is_correct": true },
+                  { "answer": "Physically secures the data center", "is_correct": false },
+                  { "answer": "Provides secure VPN access", "is_correct": false },
+                  { "answer": "Scans endpoints for malware", "is_correct": false }
+                ]
               }
             ]
           },
           {
-            "name": "Security Operations and Incident Response",
+            "name": "Business Continuity (BC), Disaster Recovery (DR) & Incident Response Concepts",
             "questions": [
               {
                 "question": "What is the first step in incident response?",
@@ -319,6 +609,86 @@
                   {"answer": "Identify the incident", "is_correct": false},
                   {"answer": "Prepare for incidents", "is_correct": true},
                   {"answer": "Recover from the incident", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is the primary difference between business continuity (BC) and disaster recovery (DR)?",
+                "explanation": "BC is about maintaining critical operations during and after a disruption, while DR focuses specifically on restoring IT systems and data.",
+                "answers": [
+                    {"answer": "BC is about keeping critical operations running during and after a disruption, while DR focuses on restoring IT systems and data after a disaster", "is_correct": true},
+                    {"answer": "BC deals only with cyber attacks, whereas DR deals with natural disasters", "is_correct": false},
+                    {"answer": "BC is handled by management, and DR is handled by technical staff - they are unrelated processes", "is_correct": false},
+                    {"answer": "There is no difference; business continuity and disaster recovery are two terms for the same thing", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is a Business Impact Analysis (BIA) used for in business continuity planning?",
+                "explanation": "A BIA identifies critical business functions and the effects of their disruption, helping prioritize recovery strategies.",
+                "answers": [
+                    {"answer": "Identifying an organization's critical functions and the effects of their interruption, to prioritize recovery strategies", "is_correct": true},
+                    {"answer": "Scanning the network for vulnerabilities before a disaster occurs", "is_correct": false},
+                    {"answer": "Documenting contact information for emergency responders", "is_correct": false},
+                    {"answer": "Determining the monetary value of the company's assets for insurance purposes", "is_correct": false}
+                ]
+              },
+              {
+                "question": "In disaster recovery terms, what does Recovery Point Objective (RPO) refer to?",
+                "explanation": "RPO is the maximum tolerable period of data loss, determining how current the recovered data should be.",
+                "answers": [
+                    {"answer": "The maximum amount of data loss (measured in time) that is acceptable in the event of a disaster", "is_correct": true},
+                    {"answer": "The target time within which systems must be restored after an outage", "is_correct": false},
+                    {"answer": "The physical point to which backups are sent", "is_correct": false},
+                    {"answer": "The number of users that can be served when running in disaster mode", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of these components is most essential for any disaster recovery plan?",
+                "explanation": "Regular off-site backups are critical for recovering from catastrophic events.",
+                "answers": [
+                    {"answer": "Regular data backups stored off-site", "is_correct": true},
+                    {"answer": "Guard dogs at the data center", "is_correct": false},
+                    {"answer": "An intrusion detection system", "is_correct": false},
+                    {"answer": "Employee social events", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of the following is typically the first phase of an incident response process?",
+                "explanation": "Preparation is the first step and involves planning and readiness before incidents occur.",
+                "answers": [
+                    {"answer": "Preparation (planning and readiness before incidents occur)", "is_correct": true},
+                    {"answer": "Detection and analysis of an incident", "is_correct": false},
+                    {"answer": "Containment of the incident", "is_correct": false},
+                    {"answer": "Eradication and recovery", "is_correct": false}
+                ]
+              },
+              {
+                "question": "The containment phase of incident response is primarily intended to:",
+                "explanation": "Containment is about limiting the spread of an incident and preventing additional damage.",
+                "answers": [
+                    {"answer": "Limit the further spread of an incident and prevent additional damage", "is_correct": true},
+                    {"answer": "Identify the attacker's identity", "is_correct": false},
+                    {"answer": "Determine which laws were violated", "is_correct": false},
+                    {"answer": "Restore systems to normal operation immediately", "is_correct": false}
+                ]
+              },
+              {
+                "question": "After an incident has been handled, what does the 'lessons learned' phase involve?",
+                "explanation": "Lessons learned is a post-incident review used to assess and improve future incident response processes.",
+                "answers": [
+                    {"answer": "Review what happened, analyze the response, and identify improvements", "is_correct": true},
+                    {"answer": "Eradicate the threat completely", "is_correct": false},
+                    {"answer": "Notify law enforcement", "is_correct": false},
+                    {"answer": "Update employee contact lists", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of the following is a major distinction between business continuity planning and incident response planning?",
+                "explanation": "Business continuity is broader, covering full business operations, while incident response focuses on handling specific security incidents.",
+                "answers": [
+                    {"answer": "Business continuity focuses on keeping the entire business operational (people, processes, facilities), whereas incident response focuses specifically on IT security incidents", "is_correct": true},
+                    {"answer": "Business continuity is only concerned with natural disasters, while incident response is only for cyber attacks", "is_correct": false},
+                    {"answer": "Business continuity planning is the responsibility of IT staff, but incident response planning is handled by senior executives exclusively", "is_correct": false},
+                    {"answer": "There is no difference - they are identical in scope", "is_correct": false}
                 ]
               }
             ]
@@ -355,22 +725,10 @@
                 "question": "What is a zero-day vulnerability?",
                 "explanation": "A zero-day vulnerability is a flaw that is exploited before the vendor has released a patch.",
                 "answers": [
-                  {
-                    "answer": "A known vulnerability with a patch",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "An unpatched vulnerability",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "A vulnerability in legacy systems",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "A vulnerability in open-source software",
-                    "is_correct": false
-                  }
+                  {"answer": "A known vulnerability with a patch", "is_correct": false},
+                  {"answer": "An unpatched vulnerability", "is_correct": true},
+                  {"answer": "A vulnerability in legacy systems", "is_correct": false},
+                  {"answer": "A vulnerability in open-source software", "is_correct": false}
                 ]
               }
             ]
@@ -382,44 +740,20 @@
                 "question": "What is the purpose of a DMZ in network architecture?",
                 "explanation": "A DMZ (Demilitarized Zone) is used to add an additional layer of security to an organization's local area network (LAN).",
                 "answers": [
-                  {
-                    "answer": "To isolate internal networks from external threats",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To provide high-speed internet access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To store sensitive data",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To manage user authentication",
-                    "is_correct": false
-                  }
+                  {"answer": "To isolate internal networks from external threats", "is_correct": true},
+                  {"answer": "To provide high-speed internet access", "is_correct": false},
+                  {"answer": "To store sensitive data", "is_correct": false},
+                  {"answer": "To manage user authentication", "is_correct": false}
                 ]
               },
               {
                 "question": "What is the purpose of network segmentation?",
                 "explanation": "Network segmentation improves security and performance by dividing a network into smaller, manageable sections.",
                 "answers": [
-                  {
-                    "answer": "To increase network speed",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To improve security and performance",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To simplify network management",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To eliminate the need for firewalls",
-                    "is_correct": false
-                  }
+                  {"answer": "To increase network speed", "is_correct": false},
+                  {"answer": "To improve security and performance", "is_correct": true},
+                  {"answer": "To simplify network management", "is_correct": false},
+                  {"answer": "To eliminate the need for firewalls", "is_correct": false}
                 ]
               }
             ]
@@ -431,22 +765,10 @@
                 "question": "What is the purpose of a VPN?",
                 "explanation": "A VPN (Virtual Private Network) encrypts internet traffic and masks the user's IP address.",
                 "answers": [
-                  {
-                    "answer": "To improve internet speed",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To encrypt internet traffic",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To bypass firewalls",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To manage user authentication",
-                    "is_correct": false
-                  }
+                  {"answer": "To improve internet speed", "is_correct": false},
+                  {"answer": "To encrypt internet traffic", "is_correct": true},
+                  {"answer": "To bypass firewalls", "is_correct": false},
+                  {"answer": "To manage user authentication", "is_correct": false}
                 ]
               }
             ]
@@ -458,66 +780,30 @@
                 "question": "What is the first step in incident response?",
                 "explanation": "The first step is to prepare for potential incidents.",
                 "answers": [
-                  {
-                    "answer": "Contain the incident",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Identify the incident",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Prepare for incidents",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "Recover from the incident",
-                    "is_correct": false
-                  }
+                  {"answer": "Contain the incident", "is_correct": false},
+                  {"answer": "Identify the incident", "is_correct": false},
+                  {"answer": "Prepare for incidents", "is_correct": true},
+                  {"answer": "Recover from the incident", "is_correct": false}
                 ]
               },
               {
                 "question": "What is the purpose of a security incident report?",
                 "explanation": "A security incident report documents the details of a security incident for analysis and future prevention.",
                 "answers": [
-                  {
-                    "answer": "To improve system performance",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To document security incidents",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To manage user access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To monitor network traffic",
-                    "is_correct": false
-                  }
+                  {"answer": "To improve system performance", "is_correct": false},
+                  {"answer": "To document security incidents", "is_correct": true},
+                  {"answer": "To manage user access", "is_correct": false},
+                  {"answer": "To monitor network traffic", "is_correct": false}
                 ]
               },
               {
                 "question": "What is the purpose of a security operations center (SOC)?",
                 "explanation": "A SOC monitors and analyzes an organization's security posture on an ongoing basis.",
                 "answers": [
-                  {
-                    "answer": "To manage user access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To monitor and analyze security events",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To improve system performance",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To store sensitive data",
-                    "is_correct": false
-                  }
+                  {"answer": "To manage user access", "is_correct": false},
+                  {"answer": "To monitor and analyze security events", "is_correct": true},
+                  {"answer": "To improve system performance", "is_correct": false},
+                  {"answer": "To store sensitive data", "is_correct": false}
                 ]
               }
             ]
@@ -529,88 +815,40 @@
                 "question": "What is the purpose of risk assessment?",
                 "explanation": "Risk assessment identifies and evaluates risks to an organization's assets.",
                 "answers": [
-                  {
-                    "answer": "To eliminate all risks",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To identify and evaluate risks",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To manage user access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To monitor network traffic",
-                    "is_correct": false
-                  }
+                  {"answer": "To eliminate all risks", "is_correct": false},
+                  {"answer": "To identify and evaluate risks", "is_correct": true},
+                  {"answer": "To manage user access", "is_correct": false},
+                  {"answer": "To monitor network traffic", "is_correct": false}
                 ]
               },
               {
                 "question": "What is the purpose of compliance audits?",
                 "explanation": "Compliance audits ensure that an organization adheres to regulatory requirements and internal policies.",
                 "answers": [
-                  {
-                    "answer": "To improve system performance",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To ensure adherence to regulations",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To manage user access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To monitor network traffic",
-                    "is_correct": false
-                  }
+                  {"answer": "To improve system performance", "is_correct": false},
+                  {"answer": "To ensure adherence to regulations", "is_correct": true},
+                  {"answer": "To manage user access", "is_correct": false},
+                  {"answer": "To monitor network traffic", "is_correct": false}
                 ]
               },
               {
                 "question": "What is the purpose of a business continuity plan?",
                 "explanation": "A business continuity plan outlines procedures to ensure critical business functions continue during and after a disaster.",
                 "answers": [
-                  {
-                    "answer": "To eliminate all risks",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To ensure business functions continue",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To manage user access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To monitor network traffic",
-                    "is_correct": false
-                  }
+                  {"answer": "To eliminate all risks", "is_correct": false},
+                  {"answer": "To ensure business functions continue", "is_correct": true},
+                  {"answer": "To manage user access", "is_correct": false},
+                  {"answer": "To monitor network traffic", "is_correct": false}
                 ]
               },
               {
                 "question": "What is the purpose of data classification?",
                 "explanation": "Data classification categorizes data based on its sensitivity and the impact of its disclosure.",
                 "answers": [
-                  {
-                    "answer": "To improve system performance",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To categorize data based on sensitivity",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "To manage user access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "To monitor network traffic",
-                    "is_correct": false
-                  }
+                  {"answer": "To improve system performance", "is_correct": false},
+                  {"answer": "To categorize data based on sensitivity", "is_correct": true},
+                  {"answer": "To manage user access", "is_correct": false},
+                  {"answer": "To monitor network traffic", "is_correct": false}
                 ]
               }
             ]
