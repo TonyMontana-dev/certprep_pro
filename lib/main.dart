@@ -33,7 +33,7 @@ Future<void> resetDatabase() async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  //await resetDatabase(); // Uncomment to reset the database
+  await resetDatabase(); // Uncomment to reset the database
 
   final settings = SettingsService();
   final darkMode = await settings.getDarkMode();
