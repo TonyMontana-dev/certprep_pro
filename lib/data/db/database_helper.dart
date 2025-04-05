@@ -103,7 +103,62 @@ class DatabaseHelper {
       )
     ''');
 
-    // ✅ Insert sample data from JSON if database is empty
+    await db.execute('''
+      CREATE TABLE meta (
+        key TEXT PRIMARY KEY,
+        value TEXT
+      )
+    ''');
+
+    // Initial metadata version
+    await db.insert('meta', {'key': 'data_version', 'value': '1'});
+
+    // Insert default question set
     await insertQuestionsFromJson(db);
+  }
+
+  /// 🔁 Syncs the question bank if JSON data version changed
+  Future<void> syncQuestionBankIfNeeded() async {
+    final db = await database;
+    const latestVersion = '2'; // Change this when JSON changes
+
+    // Make sure meta table exists
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS meta (
+        key TEXT PRIMARY KEY,
+        value TEXT
+      )
+    ''');
+
+    final result = await db.query(
+      'meta',
+      where: 'key = ?',
+      whereArgs: ['data_version'],
+    );
+
+    final currentVersion =
+        result.isNotEmpty ? result.first['value'] as String : null;
+
+    if (currentVersion != latestVersion) {
+      // 🔄 Clear old data
+      await db.delete('answers');
+      await db.delete('questions');
+      await db.delete('domains');
+      await db.delete('exams');
+
+      // ✅ Reinsert fresh data
+      await insertQuestionsFromJson(db);
+
+      // Update version
+      await db.insert(
+        'meta',
+        {'key': 'data_version', 'value': latestVersion},
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+
+      print("✅ Question bank updated to version $latestVersion");
+    } else {
+      print("✔️ Question bank already up-to-date");
+    }
   }
 }

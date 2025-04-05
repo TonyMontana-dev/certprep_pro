@@ -18,23 +18,24 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
     super.initState();
     _loadStats();
   }
-
+  
   Future<void> _loadStats() async {
     final db = await dbHelper.database;
     final result = await db.rawQuery('''
       SELECT d.name as domain_name,
-             us.total_answered,
-             us.correct_answered,
-             us.total_time_seconds
+      SUM(us.total_answered) as total_answered,
+      SUM(us.correct_answered) as correct_answered,
+      SUM(us.total_time_seconds) as total_time_seconds
       FROM user_stats us
       JOIN domains d ON d.id = us.domain_id
-      ORDER BY d.name ASC
+      GROUP BY us.domain_id
     ''');
 
     setState(() {
       _stats = result;
     });
   }
+
 
   int get totalQuestions =>
       _stats.fold(0, (sum, s) => sum + (s['total_answered'] as int));
@@ -63,8 +64,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   _buildStatTile("Total Questions Answered", "$totalQuestions"),
                   _buildStatTile("Correct Answers", "$correctQuestions"),
                   _buildStatTile("Accuracy", "${accuracy.toStringAsFixed(1)}%"),
-                  _buildStatTile(
-                      "Total Time Spent", _formatDuration(totalSeconds)),
+                  _buildStatTile("Total Time Spent", _formatDuration(totalSeconds)),
                   const SizedBox(height: 30),
                   Text("Domain Breakdown",
                       style: Theme.of(context).textTheme.titleMedium),

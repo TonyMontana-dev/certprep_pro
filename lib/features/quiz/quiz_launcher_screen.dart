@@ -40,7 +40,7 @@ class _QuizLauncherScreenState extends State<QuizLauncherScreen> {
     );
     setState(() {
       _domains = domains;
-      _selectedDomainId = null; // Reset domain when exam changes
+      _selectedDomainId = null;
     });
   }
 
@@ -63,12 +63,19 @@ class _QuizLauncherScreenState extends State<QuizLauncherScreen> {
         child: Column(
           children: [
             DropdownButtonFormField<int>(
-              decoration: const InputDecoration(labelText: "Select Exam"),
+              isExpanded: true,
+              decoration: const InputDecoration(
+                labelText: "Select Exam",
+                border: OutlineInputBorder(),
+              ),
               value: _selectedExamId,
               items: _exams
                   .map((e) => DropdownMenuItem<int>(
                         value: e['id'] as int,
-                        child: Text(e['title'] as String),
+                        child: Text(
+                          e['title'] as String,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ))
                   .toList(),
               onChanged: (val) {
@@ -79,13 +86,19 @@ class _QuizLauncherScreenState extends State<QuizLauncherScreen> {
             const SizedBox(height: 20),
             if (_domains.isNotEmpty)
               DropdownButtonFormField<int>(
+                isExpanded: true,
                 decoration: const InputDecoration(
-                    labelText: "Select Domain (Optional)"),
+                  labelText: "Select Domain (Optional)",
+                  border: OutlineInputBorder(),
+                ),
                 value: _selectedDomainId,
                 items: _domains
                     .map((d) => DropdownMenuItem<int>(
                           value: d['id'] as int,
-                          child: Text(d['name'] as String),
+                          child: Text(
+                            d['name'] as String,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ))
                     .toList(),
                 onChanged: (val) => setState(() => _selectedDomainId = val),
@@ -96,10 +109,12 @@ class _QuizLauncherScreenState extends State<QuizLauncherScreen> {
               icon: const Icon(Icons.play_arrow),
               label: const Text("Start Quiz"),
               style: ElevatedButton.styleFrom(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 16,
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -5,10 +5,10 @@
 ///
 /// Copyright (c) 2025 CertPrep Pro
 /// GNU General Public License v3.0
-/// https://certpreppro.com
 /// Created by: TonyMontana-dev & ChatGPT 4o
 library;
 
+import 'package:certprep_pro/data/db/database_helper.dart';
 import 'package:flutter/material.dart';
 import 'features/quiz/quiz_screen.dart';
 import 'data/settings/settings_service.dart';
@@ -32,7 +32,10 @@ Future<void> resetDatabase() async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await resetDatabase(); // Uncomment to reset the database
+  //await resetDatabase(); // Uncomment to reset the database
+
+  final db = await DatabaseHelper().database; // 🔧 Ensure DB is created first
+  await DatabaseHelper().syncQuestionBankIfNeeded(); // 🔁 Now safe to sync
 
   final settings = SettingsService();
   final darkMode = await settings.getDarkMode();
