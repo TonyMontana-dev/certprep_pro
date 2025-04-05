@@ -10,44 +10,250 @@
                 "question": "What is the primary goal of information security?",
                 "explanation": "The primary goal is to ensure the confidentiality, integrity, and availability of information.",
                 "answers": [
-                  {
-                    "answer": "Maximize system performance",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Ensure the CIA triad",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "Prevent physical access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Minimize cost of security",
-                    "is_correct": false
-                  }
+                  {"answer": "Maximize system performance", "is_correct": false},
+                  {"answer": "Ensure the CIA triad", "is_correct": true},
+                  {"answer": "Prevent physical access", "is_correct": false},
+                  {"answer": "Minimize cost of security", "is_correct": false}
                 ]
               },
               {
                 "question": "What does the principle of least privilege ensure?",
                 "explanation": "It ensures users only have the minimum access required for their role.",
                 "answers": [
-                  {
-                    "answer": "All users get admin access",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Access is granted based on job requirements",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "Users can request more privileges anytime",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Access is shared among teams",
-                    "is_correct": false
-                  }
+                  {"answer": "All users get admin access", "is_correct": false},
+                  {"answer": "Access is granted based on job requirements", "is_correct": true},
+                  {"answer": "Users can request more privileges anytime", "is_correct": false},
+                  {"answer": "Access is shared among teams", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is the purpose of encryption?",
+                "explanation": "Encryption protects data by converting it into a format that cannot be read without a decryption key.",
+                "answers": [
+                  {"answer": "To compress data", "is_correct": false},
+                  {"answer": "To protect data confidentiality", "is_correct": true},
+                  {"answer": "To improve data integrity", "is_correct": false},
+                  {"answer": "To enhance system performance", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is the purpose of a security policy?",
+                "explanation": "A security policy outlines the rules and procedures for protecting an organization's information assets.",
+                "answers": [
+                  {"answer": "To define user roles", "is_correct": false},
+                  {"answer": "To outline security practices", "is_correct": true},
+                  {"answer": "To manage network traffic", "is_correct": false},
+                  {"answer": "To monitor system performance", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which security principle is violated when an unauthorized person intercepts and reads confidential information during transmission?",
+                "explanation": "Confidentiality is the principle that ensures information is not disclosed to unauthorized individuals. If someone intercepts and reads data they are not allowed to see, confidentiality is compromised.",
+                "answers": [
+                    {"answer": "Confidentiality", "is_correct": true},
+                    {"answer": "Integrity", "is_correct": false},
+                    {"answer": "Availability", "is_correct": false},
+                    {"answer": "Authentication", "is_correct": false}
+                ]
+              },
+              {
+                "question": "An employee discovers that a file's checksum no longer matches the expected value, indicating the file was altered without authorization. Which principle of information security has been compromised?",
+                "explanation": "Altered data that no longer matches its original checksum means the integrity of the file is compromised. Integrity involves guarding against improper modification or destruction of information.",
+                "answers": [
+                    {"answer": "Confidentiality", "is_correct": false},
+                    {"answer": "Integrity", "is_correct": true},
+                    {"answer": "Availability", "is_correct": false},
+                    {"answer": "Authentication", "is_correct": false}
+                ]
+              },
+              {
+                "question": "A server outage causes a critical application to be unavailable for several hours. Which principle of the CIA triad was most directly impacted by this outage?",
+                "explanation": "An outage that makes an application unavailable affects availability, which ensures systems and data are accessible to authorized users when needed.",
+                "answers": [
+                    {"answer": "Confidentiality", "is_correct": false},
+                    {"answer": "Integrity", "is_correct": false},
+                    {"answer": "Availability", "is_correct": true},
+                    {"answer": "Non-repudiation", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of the following is an example of multi-factor authentication?",
+                "explanation": "Option A uses a smart card (something you have) plus a PIN (something you know), which are two distinct factor types, making it multi-factor authentication.",
+                "answers": [
+                    {"answer": "Swiping a smart card and entering a PIN", "is_correct": true},
+                    {"answer": "Logging in with a username and password", "is_correct": false},
+                    {"answer": "Scanning two different fingerprints", "is_correct": false},
+                    {"answer": "Entering a password and a PIN", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is the difference between authentication and authorization in access control?",
+                "explanation": "Authentication is verifying a user's identity, and authorization is determining what that authenticated user is allowed to access.",
+                "answers": [
+                    {"answer": "Authentication verifies a user's identity, whereas authorization determines what resources that user can access", "is_correct": true},
+                    {"answer": "Authentication grants permissions to users, while authorization establishes their identity", "is_correct": false},
+                    {"answer": "Authentication and authorization are the same thing", "is_correct": false},
+                    {"answer": "Authentication logs user actions, and authorization reviews those logs for violations", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What best describes the security principle of non-repudiation?",
+                "explanation": "Non-repudiation means ensuring a user cannot deny having performed an action. This is often enforced via mechanisms like digital signatures.",
+                "answers": [
+                    {"answer": "Ensuring that if a user performs an action, they cannot later deny having done so", "is_correct": true},
+                    {"answer": "Preventing damage to an organization's reputation during a breach", "is_correct": false},
+                    {"answer": "Requiring multiple approvals for sensitive actions to protect the organization's reputation", "is_correct": false},
+                    {"answer": "Preventing reuse of network sessions by attackers", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of the following best describes data privacy in a cybersecurity context?",
+                "explanation": "Privacy involves protecting personal data and ensuring individuals have control over how their information is used.",
+                "answers": [
+                    {"answer": "Protecting personal data and allowing individuals control over how their information is collected and used", "is_correct": true},
+                    {"answer": "Ensuring only authorized users can access information (regardless of its sensitivity)", "is_correct": false},
+                    {"answer": "Guaranteeing that data remains unaltered during storage and transit", "is_correct": false},
+                    {"answer": "Keeping systems available to users whenever needed", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of the following is NOT a common strategy for addressing risk in risk management?",
+                "explanation": "\"Risk ignorance\" is not a valid risk management strategy. Common strategies include mitigation, avoidance, transference, and acceptance.",
+                "answers": [
+                    {"answer": "Risk mitigation", "is_correct": false},
+                    {"answer": "Risk avoidance", "is_correct": false},
+                    {"answer": "Risk transference", "is_correct": false},
+                    {"answer": "Risk ignorance", "is_correct": true}
+                ]
+              },
+              {
+                "question": "A company discontinues using a software after determining the risk is too high and cannot be cost-effectively mitigated. What is this an example of?",
+                "explanation": "This is risk avoidance — eliminating the risky activity entirely.",
+                "answers": [
+                    {"answer": "Risk avoidance", "is_correct": true},
+                    {"answer": "Risk acceptance", "is_correct": false},
+                    {"answer": "Risk mitigation", "is_correct": false},
+                    {"answer": "Risk transfer", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Choosing to take no additional action for a low-impact risk that falls within risk tolerance is an example of:",
+                "explanation": "When the risk is within acceptable limits and no action is taken, it is risk acceptance.",
+                "answers": [
+                    {"answer": "Risk acceptance", "is_correct": true},
+                    {"answer": "Risk avoidance", "is_correct": false},
+                    {"answer": "Risk mitigation", "is_correct": false},
+                    {"answer": "Risk sharing", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Implementing a firewall to reduce the likelihood of a cyber attack is an example of:",
+                "explanation": "This is risk mitigation — implementing controls to reduce the impact or likelihood of a threat.",
+                "answers": [
+                    {"answer": "Risk mitigation", "is_correct": true},
+                    {"answer": "Risk avoidance", "is_correct": false},
+                    {"answer": "Risk transfer", "is_correct": false},
+                    {"answer": "Risk acceptance", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of the following best describes an administrative control in security?",
+                "explanation": "Administrative controls include policies, training, and procedures implemented by management.",
+                "answers": [
+                    {"answer": "A policy or procedure set by management, such as a security training program or data handling policy", "is_correct": true},
+                    {"answer": "A device or software that filters network traffic, like a firewall", "is_correct": false},
+                    {"answer": "A physical barrier or device, like a locked door or security camera", "is_correct": false},
+                    {"answer": "A security measure implemented in hardware or software, like encryption or an antivirus program", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Requiring that no single person can complete all steps of a sensitive transaction implements which security principle?",
+                "explanation": "This is the principle of separation of duties — dividing responsibilities to reduce the risk of fraud or error.",
+                "answers": [
+                    {"answer": "Separation of duties", "is_correct": true},
+                    {"answer": "Least privilege", "is_correct": false},
+                    {"answer": "Non-repudiation", "is_correct": false},
+                    {"answer": "Security through obscurity", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Allowing a file owner to decide who can access the file is an example of which access control model?",
+                "explanation": "This is Discretionary Access Control (DAC), where the owner determines access permissions.",
+                "answers": [
+                    {"answer": "Discretionary Access Control (DAC)", "is_correct": true},
+                    {"answer": "Mandatory Access Control (MAC)", "is_correct": false},
+                    {"answer": "Role-Based Access Control (RBAC)", "is_correct": false},
+                    {"answer": "Attribute-Based Access Control (ABAC)", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which access control model is used in government systems with classified labels (e.g., Confidential, Secret)?",
+                "explanation": "Mandatory Access Control (MAC) is used in environments where access is based on classifications and policies, not user discretion.",
+                "answers": [
+                    {"answer": "Mandatory Access Control (MAC)", "is_correct": true},
+                    {"answer": "Discretionary Access Control (DAC)", "is_correct": false},
+                    {"answer": "Role-Based Access Control (RBAC)", "is_correct": false},
+                    {"answer": "Rule-Based Access Control", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Assigning permissions to users based on job roles like 'HR Manager' or 'Developer' describes which model?",
+                "explanation": "Role-Based Access Control (RBAC) assigns permissions based on organizational roles or functions.",
+                "answers": [
+                    {"answer": "Role-Based Access Control (RBAC)", "is_correct": true},
+                    {"answer": "Discretionary Access Control (DAC)", "is_correct": false},
+                    {"answer": "Mandatory Access Control (MAC)", "is_correct": false},
+                    {"answer": "Attribute-Based Access Control (ABAC)", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is the typical sequence of steps in access control?",
+                "explanation": "The correct order is Identification → Authentication → Authorization.",
+                "answers": [
+                    {"answer": "Identification -> Authentication -> Authorization", "is_correct": true},
+                    {"answer": "Authentication -> Identification -> Authorization", "is_correct": false},
+                    {"answer": "Authorization -> Authentication -> Audit", "is_correct": false},
+                    {"answer": "Authentication -> Encryption -> Authorization", "is_correct": false}
+                ]
+              },
+              {
+                "question": "In access control terminology, which of the following is considered a subject?",
+                "explanation": "A subject is an active entity that requests access to resources, such as a user or process.",
+                "answers": [
+                    {"answer": "A user attempting to read a file", "is_correct": true},
+                    {"answer": "A confidential file stored on a server", "is_correct": false},
+                    {"answer": "A database table containing customer data", "is_correct": false},
+                    {"answer": "A printer shared on the network", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What does the principle of least privilege dictate?",
+                "explanation": "It requires granting users only the permissions necessary to perform their job duties.",
+                "answers": [
+                    {"answer": "Only the minimum access rights necessary to perform their job duties", "is_correct": true},
+                    {"answer": "Access rights equal to their highest level of clearance", "is_correct": false},
+                    {"answer": "No access to any system until they receive security training", "is_correct": false},
+                    {"answer": "All permissions by default, revoking them only if misuse occurs", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which scenario violates the principle of least privilege?",
+                "explanation": "Granting full administrator rights to all employees is excessive and violates the principle of least privilege.",
+                "answers": [
+                    {"answer": "Every employee is given full administrator rights on all systems", "is_correct": true},
+                    {"answer": "A database admin can access servers but not HR payroll files", "is_correct": false},
+                    {"answer": "A customer service rep is allowed to view but not delete customer records", "is_correct": false},
+                    {"answer": "Network engineers have access to devices but not financial systems", "is_correct": false}
+                ]
+              },
+              {
+                "question": "Which of the following scenarios would be considered a security weakness under the separation of duties principle?",
+                "explanation": "Allowing the same employee to both initiate and approve a vendor payment concentrates too much power and violates separation of duties.",
+                "answers": [
+                    {"answer": "The same employee can both initiate and approve a vendor payment", "is_correct": true},
+                    {"answer": "One employee requests a purchase and another approves it", "is_correct": false},
+                    {"answer": "Code development and deployment are done by different people", "is_correct": false},
+                    {"answer": "Two admins must jointly approve deletion of critical data", "is_correct": false}
                 ]
               }
             ]
@@ -59,22 +265,60 @@
                 "question": "Which model uses roles to determine access permissions?",
                 "explanation": "Role-Based Access Control (RBAC) uses roles to manage access.",
                 "answers": [
-                  {
-                    "answer": "Discretionary Access Control",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Mandatory Access Control",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Role-Based Access Control",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "Rule-Based Access Control",
-                    "is_correct": false
-                  }
+                  {"answer": "Discretionary Access Control", "is_correct": false},
+                  {"answer": "Mandatory Access Control", "is_correct": false},
+                  {"answer": "Role-Based Access Control", "is_correct": true},
+                  {"answer": "Rule-Based Access Control", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is the purpose of multi-factor authentication?",
+                "explanation": "Multi-factor authentication adds an extra layer of security by requiring multiple forms of verification.",
+                "answers": [
+                  {"answer": "To simplify user access", "is_correct": false},
+                  {"answer": "To enhance security", "is_correct": true},
+                  {"answer": "To reduce password complexity", "is_correct": false},
+                  {"answer": "To eliminate the need for passwords", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is the purpose of a password policy?",
+                "explanation": "A password policy defines rules for creating and managing passwords to enhance security.",
+                "answers": [
+                  {"answer": "To allow users to choose any password", "is_correct": false},
+                  {"answer": "To enforce strong password practices", "is_correct": true},
+                  {"answer": "To eliminate the need for passwords", "is_correct": false},
+                  {"answer": "To simplify user access", "is_correct": false}
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Security Architecture",
+            "questions": [
+              {
+                "question": "What is the purpose of a firewall?",
+                "explanation": "A firewall monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+                "answers": [
+                  {"answer": "To encrypt data", "is_correct": false},
+                  {"answer": "To filter network traffic", "is_correct": true},
+                  {"answer": "To store sensitive information", "is_correct": false},
+                  {"answer": "To manage user authentication", "is_correct": false}
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Security Operations and Incident Response",
+            "questions": [
+              {
+                "question": "What is the first step in incident response?",
+                "explanation": "The first step is to prepare for potential incidents.",
+                "answers": [
+                  {"answer": "Contain the incident", "is_correct": false},
+                  {"answer": "Identify the incident", "is_correct": false},
+                  {"answer": "Prepare for incidents", "is_correct": true},
+                  {"answer": "Recover from the incident", "is_correct": false}
                 ]
               }
             ]
@@ -91,42 +335,280 @@
                 "question": "Which of the following is a type of social engineering attack?",
                 "explanation": "Phishing is a common social engineering method where attackers trick users into revealing sensitive information.",
                 "answers": [
-                  {
-                    "answer": "Phishing",
-                    "is_correct": true
-                  },
-                  {
-                    "answer": "SQL Injection",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "DDoS",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Man-in-the-middle",
-                    "is_correct": false
-                  }
+                  {"answer": "Phishing", "is_correct": true},
+                  {"answer": "SQL Injection", "is_correct": false},
+                  {"answer": "DDoS", "is_correct": false},
+                  {"answer": "Man-in-the-middle", "is_correct": false}
                 ]
               },
               {
                 "question": "Which malware type demands payment to restore access?",
                 "explanation": "Ransomware encrypts files and demands payment to restore access.",
                 "answers": [
+                  {"answer": "Trojan", "is_correct": false},
+                  {"answer": "Rootkit", "is_correct": false},
+                  {"answer": "Ransomware", "is_correct": true},
+                  {"answer": "Spyware", "is_correct": false}
+                ]
+              },
+              {
+                "question": "What is a zero-day vulnerability?",
+                "explanation": "A zero-day vulnerability is a flaw that is exploited before the vendor has released a patch.",
+                "answers": [
                   {
-                    "answer": "Trojan",
+                    "answer": "A known vulnerability with a patch",
                     "is_correct": false
                   },
                   {
-                    "answer": "Rootkit",
-                    "is_correct": false
-                  },
-                  {
-                    "answer": "Ransomware",
+                    "answer": "An unpatched vulnerability",
                     "is_correct": true
                   },
                   {
-                    "answer": "Spyware",
+                    "answer": "A vulnerability in legacy systems",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "A vulnerability in open-source software",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Architecture and Design",
+            "questions": [
+              {
+                "question": "What is the purpose of a DMZ in network architecture?",
+                "explanation": "A DMZ (Demilitarized Zone) is used to add an additional layer of security to an organization's local area network (LAN).",
+                "answers": [
+                  {
+                    "answer": "To isolate internal networks from external threats",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To provide high-speed internet access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To store sensitive data",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To manage user authentication",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "What is the purpose of network segmentation?",
+                "explanation": "Network segmentation improves security and performance by dividing a network into smaller, manageable sections.",
+                "answers": [
+                  {
+                    "answer": "To increase network speed",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To improve security and performance",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To simplify network management",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To eliminate the need for firewalls",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Implementation",
+            "questions": [
+              {
+                "question": "What is the purpose of a VPN?",
+                "explanation": "A VPN (Virtual Private Network) encrypts internet traffic and masks the user's IP address.",
+                "answers": [
+                  {
+                    "answer": "To improve internet speed",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To encrypt internet traffic",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To bypass firewalls",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To manage user authentication",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Operations and Incident Response",
+            "questions": [
+              {
+                "question": "What is the first step in incident response?",
+                "explanation": "The first step is to prepare for potential incidents.",
+                "answers": [
+                  {
+                    "answer": "Contain the incident",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Identify the incident",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "Prepare for incidents",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "Recover from the incident",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "What is the purpose of a security incident report?",
+                "explanation": "A security incident report documents the details of a security incident for analysis and future prevention.",
+                "answers": [
+                  {
+                    "answer": "To improve system performance",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To document security incidents",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To manage user access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To monitor network traffic",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "What is the purpose of a security operations center (SOC)?",
+                "explanation": "A SOC monitors and analyzes an organization's security posture on an ongoing basis.",
+                "answers": [
+                  {
+                    "answer": "To manage user access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To monitor and analyze security events",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To improve system performance",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To store sensitive data",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Governance, Risk and Compliance",
+            "questions": [
+              {
+                "question": "What is the purpose of risk assessment?",
+                "explanation": "Risk assessment identifies and evaluates risks to an organization's assets.",
+                "answers": [
+                  {
+                    "answer": "To eliminate all risks",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To identify and evaluate risks",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To manage user access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To monitor network traffic",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "What is the purpose of compliance audits?",
+                "explanation": "Compliance audits ensure that an organization adheres to regulatory requirements and internal policies.",
+                "answers": [
+                  {
+                    "answer": "To improve system performance",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To ensure adherence to regulations",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To manage user access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To monitor network traffic",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "What is the purpose of a business continuity plan?",
+                "explanation": "A business continuity plan outlines procedures to ensure critical business functions continue during and after a disaster.",
+                "answers": [
+                  {
+                    "answer": "To eliminate all risks",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To ensure business functions continue",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To manage user access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To monitor network traffic",
+                    "is_correct": false
+                  }
+                ]
+              },
+              {
+                "question": "What is the purpose of data classification?",
+                "explanation": "Data classification categorizes data based on its sensitivity and the impact of its disclosure.",
+                "answers": [
+                  {
+                    "answer": "To improve system performance",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To categorize data based on sensitivity",
+                    "is_correct": true
+                  },
+                  {
+                    "answer": "To manage user access",
+                    "is_correct": false
+                  },
+                  {
+                    "answer": "To monitor network traffic",
                     "is_correct": false
                   }
                 ]
