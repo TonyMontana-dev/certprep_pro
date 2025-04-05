@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:fl_chart/fl_chart.dart';
 import '../../data/db/database_helper.dart';
 
 class AnalyticsScreen extends StatefulWidget {
@@ -29,6 +28,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
              us.total_time_seconds
       FROM user_stats us
       JOIN domains d ON d.id = us.domain_id
+      ORDER BY d.name ASC
     ''');
 
     setState(() {
@@ -36,97 +36,40 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
     });
   }
 
-  int get totalQuestions => _stats.fold(0, (sum, s) => sum + (s['total_answered'] as int));
-  int get correctQuestions => _stats.fold(0, (sum, s) => sum + (s['correct_answered'] as int));
-  int get totalSeconds => _stats.fold(0, (sum, s) => sum + (s['total_time_seconds'] as int));
+  int get totalQuestions =>
+      _stats.fold(0, (sum, s) => sum + (s['total_answered'] as int));
+  int get correctQuestions =>
+      _stats.fold(0, (sum, s) => sum + (s['correct_answered'] as int));
+  int get totalSeconds =>
+      _stats.fold(0, (sum, s) => sum + (s['total_time_seconds'] as int));
 
   @override
   Widget build(BuildContext context) {
-    double accuracy = totalQuestions == 0 ? 0 : (correctQuestions / totalQuestions * 100);
+    final accuracy =
+        totalQuestions == 0 ? 0 : (correctQuestions / totalQuestions * 100);
 
     return Scaffold(
       appBar: AppBar(title: const Text("Analytics")),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: _stats.isEmpty
-            ? const Center(child: Text("No data yet. Take a quiz to see stats."))
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            ? const Center(
+                child: Text("No data yet. Take a quiz to see stats."))
+            : ListView(
                 children: [
-                  Text("Your Progress", style: Theme.of(context).textTheme.titleLarge),
+                  Text("Your Progress",
+                      style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 12),
-                  _buildStatTile("Total Questions Answered", totalQuestions.toString()),
-                  _buildStatTile("Correct Answers", correctQuestions.toString()),
+                  _buildStatTile("Total Questions Answered", "$totalQuestions"),
+                  _buildStatTile("Correct Answers", "$correctQuestions"),
                   _buildStatTile("Accuracy", "${accuracy.toStringAsFixed(1)}%"),
-                  _buildStatTile("Total Time Spent", _formatDuration(totalSeconds)),
-                  const SizedBox(height: 24),
-                  Text("Accuracy by Domain", style: Theme.of(context).textTheme.titleMedium),
+                  _buildStatTile(
+                      "Total Time Spent", _formatDuration(totalSeconds)),
+                  const SizedBox(height: 30),
+                  Text("Domain Breakdown",
+                      style: Theme.of(context).textTheme.titleMedium),
                   const SizedBox(height: 12),
-                  SizedBox(
-                    height: 200,
-                    child: BarChart(
-                      BarChartData(
-                        borderData: FlBorderData(show: false),
-                        gridData: FlGridData(show: false),
-                        barGroups: _stats.asMap().entries.map((entry) {
-                          final index = entry.key;
-                          final stat = entry.value;
-                          final total = stat['total_answered'] as int;
-                          final correct = stat['correct_answered'] as int;
-                          final acc = total == 0 ? 0 : (correct / total * 100);
-                          return BarChartGroupData(
-                            x: index,
-                            barRods: [
-                              BarChartRodData(
-                                toY: acc.toDouble(),
-                                width: 16,
-                                color: Colors.tealAccent,
-                              ),
-                            ],
-                          );
-                        }).toList(),
-                        titlesData: FlTitlesData(
-                          leftTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                              showTitles: true,
-                              reservedSize: 30,
-                              interval: 25,
-                              getTitlesWidget: (value, meta) {
-                                if (value % 25 == 0) {
-                                  return Text(
-                                    value.toInt().toString(),
-                                    style: const TextStyle(fontSize: 10, color: Colors.white54),
-                                  );  
-                                } else {
-                                  return const SizedBox.shrink();
-                                }
-                              },
-                            ),
-                          ),
-                          bottomTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                              showTitles: true,
-                              getTitlesWidget: (value, _) {
-                                final index = value.toInt();
-                                if (index >= 0 && index < _stats.length) {
-                                  final name = _stats[index]['domain_name'];
-                                  return Padding(
-                                    padding: const EdgeInsets.only(top: 6),
-                                    child: Text(
-                                      name.toString().split(' ').first,
-                                      style: const TextStyle(fontSize: 10, color: Colors.white70),
-                                    ),
-                                  );
-                                } else {
-                                  return const Text("");
-                                }
-                              },
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  ..._stats.map(_buildDomainStatTile),
                 ],
               ),
       ),
@@ -140,7 +83,43 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
         children: [
           Text(label, style: const TextStyle(color: Colors.white70)),
           const Spacer(),
-          Text(value, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.tealAccent)),
+          Text(value,
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.tealAccent)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDomainStatTile(Map<String, dynamic> stat) {
+    final name = stat['domain_name'];
+    final total = stat['total_answered'] as int;
+    final correct = stat['correct_answered'] as int;
+    final seconds = stat['total_time_seconds'] as int;
+    final accuracy = total == 0 ? 0 : (correct / total * 100);
+
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.grey.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(name,
+              style:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          const SizedBox(height: 6),
+          Text("Answered: $total",
+              style: const TextStyle(color: Colors.white70)),
+          Text("Correct: $correct",
+              style: const TextStyle(color: Colors.white70)),
+          Text("Accuracy: ${accuracy.toStringAsFixed(1)}%",
+              style: const TextStyle(color: Colors.tealAccent)),
+          Text("Time Spent: ${_formatDuration(seconds)}",
+              style: const TextStyle(color: Colors.white70)),
         ],
       ),
     );
@@ -153,5 +132,3 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
     return "${hours}h ${minutes}m ${seconds}s";
   }
 }
-// This code is a Flutter widget that displays user analytics for a quiz application. It retrieves data from a SQLite database, calculates statistics like total questions answered, correct answers, accuracy, and time spent, and visualizes the accuracy by domain using a bar chart. The UI is built using Flutter's Material Design components.
-// The widget is stateful, meaning it can update its UI based on changes in the underlying data. It uses the fl_chart package for rendering the bar chart. The analytics screen is designed to provide users with insights into their quiz performance, helping them identify areas for improvement.

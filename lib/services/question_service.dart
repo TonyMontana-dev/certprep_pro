@@ -1,4 +1,3 @@
-import 'package:sqflite/sqflite.dart';
 import '../data/db/database_helper.dart';
 import '../data/models/question.dart';
 import '../data/models/answer.dart';
@@ -65,18 +64,18 @@ class QuestionService {
             ))
         .toList();
   }
-  
+
   Future<List<Question>> getRandomQuestions({int limit = 10}) async {
     final db = await _dbHelper.database;
     final raw = await db.rawQuery('''
       SELECT * FROM questions ORDER BY RANDOM() LIMIT ?
       ''', [limit]);
-      return raw.map((q) => Question.fromMap(q)).toList();
+    return raw.map((q) => Question.fromMap(q)).toList();
   }
 
-
   Future<void> saveQuizResult({
-    required List<Map<String, dynamic>> results, // each: {questionId, isCorrect, domainId, examId, timeSpent}
+    required List<Map<String, dynamic>>
+        results, // each: {questionId, isCorrect, domainId, examId, timeSpent}
     required int examId,
     required int totalTimeSeconds,
   }) async {
@@ -103,8 +102,11 @@ class QuestionService {
           'user_stats',
           {
             'total_answered': (existing[0]['total_answered'] as int) + 1,
-            'correct_answered': (existing[0]['correct_answered'] as int? ?? 0) + (isCorrect ? 1 : 0),
-            'total_time_seconds': (existing[0]['total_time_seconds'] as int? ?? 0) + res['timeSpent']
+            'correct_answered': (existing[0]['correct_answered'] as int? ?? 0) +
+                (isCorrect ? 1 : 0),
+            'total_time_seconds':
+                (existing[0]['total_time_seconds'] as int? ?? 0) +
+                    res['timeSpent']
           },
           where: 'id = ?',
           whereArgs: [existing[0]['id']],

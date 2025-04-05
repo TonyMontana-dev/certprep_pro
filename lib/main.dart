@@ -7,6 +7,7 @@
 /// GNU General Public License v3.0
 /// https://certpreppro.com
 /// Created by: TonyMontana-dev & ChatGPT 4o
+library;
 
 import 'package:flutter/material.dart';
 import 'features/quiz/quiz_screen.dart';
@@ -15,7 +16,6 @@ import 'features/startup/startup_transition.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-
 
 Future<void> resetDatabase() async {
   final dir = await getApplicationDocumentsDirectory();
@@ -28,7 +28,6 @@ Future<void> resetDatabase() async {
     print("❌ Database not found. No deletion necessary.");
   }
 }
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -56,7 +55,8 @@ class MyApp extends StatelessWidget {
       home: const SplashToHomeTransition(), // 👈 Start with fade-in Home
       routes: {
         '/quiz': (context) {
-          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          final args = ModalRoute.of(context)!.settings.arguments
+              as Map<String, dynamic>;
           return QuizScreen(
             examId: args['examId'],
             domainId: args['domainId'],
